@@ -1,0 +1,322 @@
+/* TODO:
+
+/* #region Common*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+}
+.light_text{
+    color: #b1b1b1;
+}
+/* #endregion */
+
+/* #region Utilities*/
+:root{
+    --bz-bgfullscreen-top:#009688;
+    --bz-bgfullscreen-bottom:#dbdbd3;
+    --bz-bg-up:#eaeaea;
+    --bz-icons:#b1b1b1;
+    --bz-notification:#8edafc;
+    --bz-bg-profilepic:#f2f2f2;
+    --bz-mymsg:#d5f9ba;
+    --bz-friendmsg:#ffffff;
+    --bz-rightfooter:#f3eeea;
+}   
+.col-4{
+    width: calc((100%/12)*4);
+}
+.col-8{
+    width: calc((100%/12)*8);
+}
+/* debug */
+.debug  {
+    /* *{
+        border: 1px dotted;
+    } */
+    .left{
+        background-color: aqua;
+    }
+    .right{
+        background-color: rebeccapurple;
+    }
+    .left_header{
+        /* height: 20%; */
+        background-color: brown;
+    }
+    
+    
+    
+    
+
+    
+
+    
+}
+/* #endregion */
+
+/* #region webapp? */
+body{
+    background: linear-gradient(
+        to top,
+        var(--bz-bgfullscreen-bottom) 70%,
+        var(--bz-bgfullscreen-top) 30%
+    )
+}
+.background_fullscreen{
+    display: flex;
+    width: 80vw;
+    margin: 5vh auto;
+    /* potrei togliere le misure a left e right dandogli solo height 100%?? */
+}
+/* left */
+
+.left{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    @media (min-width: 990px ){
+    min-width: 350px;
+
+    }
+}
+.left_main{
+    overflow: auto;
+    background-color: var(--bz-friendmsg);
+}
+.my_profile, .current_chat{
+    
+    justify-content: space-between;
+    display: flex;
+}
+.my_profile,
+.current_chat,
+.desktop_notification,
+.chat
+{
+    padding: 1rem;
+    height: 100px;
+    /* CHANGE */
+}
+.my-img{
+    aspect-ratio: 1;
+    img{
+        border-radius: 50% ;
+    }
+}
+.profile_current_chat{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.my_profile,
+.current_chat{
+    background-color: var(--bz-bg-up);
+
+}
+.my_actions{
+    font-size: 2rem;
+    color: var(--bz-icons);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.desktop_notification,
+.chat,
+.name_hour,
+.search_chat{
+    display: flex;
+    flex-direction: row;
+
+}
+.name_hour{
+    justify-content: space-between;
+}
+.icon_text{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.search_chat
+{
+    padding: 0.5rem;
+    gap: 1rem;
+    input{
+        width: 100%;
+        border: none;
+    }
+}
+input:focus-visible{
+    outline: none;
+}
+.desktop_notification{
+    background-color: var(--bz-notification);
+}
+.bell{
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    font-size: 2rem;
+    background-color: var(--bz-friendmsg);
+    color: var(--bz-notification);
+}
+.chat{
+    border-bottom: 1px solid var(--bz-icons);
+}
+/* 
+.debug {
+    .my-img{
+        width: 50px;
+        background-color: tomato;
+    }
+    .my_actions{
+        height: 100%;
+        width: 300px;
+    }
+}
+
+.my_actions{
+    display: flex;
+    justify-content: center;
+}
+ */
+
+/* right */
+.right{
+    /* need to add flex-grow: 1; */
+    height: 90vh;
+    flex-grow: 1;
+}
+.my-msg{
+    background-color: var(--bz-mymsg);
+    align-self: flex-end;
+    position: relative;
+}
+.friend-msg{
+    background-color: var(--bz-friendmsg);
+    align-self: flex-start;
+}
+.right_main{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: auto;
+    padding: 2rem 4rem;
+}
+.my-msg,
+.friend-msg{
+    padding: 0.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+.time{
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
+.right_header{
+    height: 100px;
+}
+.right_main{
+    background-image: url(./img/mine.jpg);
+    height: calc(100% - 150px);
+}
+.friend-msg, .my-msg{
+    max-width: 60%;
+    min-width: 2rem;
+    border-radius: 10px;
+    padding: 1rem;
+}
+.right_footer{
+    background-color: var(--bz-rightfooter);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* align-items: center; */
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.write-msg{
+    /* background-color: white; */
+    /* padding: 0.5rem; */
+    width: 100%;
+    input{
+        width: 100%;
+        border-radius: 0.5rem;
+        height: 2rem;
+        padding: 0.5rem;
+        border: none;
+    }
+}
+.info_selection{
+    position: absolute;
+    right: 0.5rem;
+    top: 2rem;
+    z-index: 1;
+    background-color: white;
+    text-align: center;
+    .info_action{
+        padding: 0.5rem;
+    }
+    display: none;
+}
+.info:hover + .info_selection{
+    display: block;
+}
+/* #endregion */
+
+
+
+
+
+
+/* #region Media Queries*/
+@media screen and (max-width: 991px) {
+    /* fai si che tutti questi diventino figli di left */
+    .left{
+
+        .search_chat,
+        .profile_insight,
+        .icon_text,
+        .desktop_notification,
+        .my_actions{
+            display: none;
+        }
+
+    }
+        .background_fullscreen{
+            width: 100%;
+            margin: 0;
+        }
+        .left, .right{
+            height: 100vh;
+        }
+        .left{
+            width: 100px;
+        }
+
+}
+
+@media screen and (max-width: 540px) {
+
+    .left{
+        display: none;
+    }
+    /* .col-12{
+        width: calc(100%);
+    } */
+}
+/* #endregion */
