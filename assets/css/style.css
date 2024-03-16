@@ -229,7 +229,7 @@ input:focus-visible{
     height: 100px;
 }
 .right_main{
-    background-image: url(./img/mine.jpg);
+    background-image: url(../img/mine.jpg);
     height: calc(100% - 150px);
 }
 .friend-msg, .my-msg{
