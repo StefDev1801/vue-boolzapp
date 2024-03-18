@@ -204,7 +204,14 @@ createApp({
         }else{
             return 'received'
         }
-    }
+        },
+        keyupSendFromInput() {
+            this.contacts[this.currentChat].messages.push({
+                message: this.message,
+                status: 'sent',
+                hour: ''//                                          fix hour
+            });
+        },
     },
     mounted(){
         console.log('test'); 
