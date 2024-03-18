@@ -223,22 +223,20 @@
 
                 <!-- start messages -->
                 <div class="right_main">
-                    <div class="my-msg">
+                    <div v-for="(contactmessages, contactmessagesindex) in contacts[currentChat].messages"
+                        :class="sent(contactmessages.status)">
                         <!-- qui devo inserire i messaggi che sono presenti dentro l'array
                         contact -> messages -> message
                         contacts[currrentChat].messages
                         es contacts[0].messages = Hai portato a spasso il cane?
                         -->
-                        <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vero iusto quibusdam
-                            accusamus,
-                            earum
-                            labore doloremque. Ad voluptatum tempore consectetur aspernatur fugiat, at nam ratione atque
-                            eum!
-                            Officia, eaque quasi!</div>
+                        <div>
+                            {{contactmessages.message}}
+                        </div>
 
 
                         <div class="time">
-                            16:13
+                            {{contactmessages.hour}}
                         </div>
                         <div class="info">
                             <a href="#">
@@ -250,7 +248,7 @@
                             <div class="info_action">Cancella messaggio</div>
                         </div>
                     </div>
-                    <div class="friend-msg">
+                    <!-- <div class="friend-msg">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, mollitia. Voluptas excepturi
                         incidunt doloribus quia ab assumenda repellendus aliquid quod fugit in, voluptatem id, sit sint
                         tempora quaerat vitae molestiae?
@@ -266,7 +264,7 @@
                         <div class="time">
                             16:15
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
                 <div class="right_footer">

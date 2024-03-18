@@ -189,12 +189,12 @@ input:focus-visible{
     height: 90vh;
     flex-grow: 1;
 }
-.my-msg{
+.my-msg,.sent{
     background-color: var(--bz-mymsg);
     align-self: flex-end;
     position: relative;
 }
-.friend-msg{
+.friend-msg,.recived{
     background-color: var(--bz-friendmsg);
     align-self: flex-start;
 }
@@ -206,7 +206,9 @@ input:focus-visible{
     padding: 2rem 4rem;
 }
 .my-msg,
-.friend-msg{
+.friend-msg,
+.sent,
+.recived{
     padding: 0.5rem;
     position: relative;
     display: flex;
@@ -224,7 +226,9 @@ input:focus-visible{
     background-image: url(../img/mine.jpg);
     height: calc(100% - 150px);
 }
-.friend-msg, .my-msg{
+.friend-msg, .my-msg ,
+.sent, 
+.recived{
     max-width: 60%;
     min-width: 2rem;
     border-radius: 10px;
