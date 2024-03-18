@@ -26,7 +26,7 @@ img{
     --bz-mymsg:#d5f9ba;
     --bz-friendmsg:#ffffff;
     --bz-rightfooter:#f3eeea;
-}   
+}
 .col-4{
     width: calc((100%/12)*4);
 }
@@ -48,14 +48,6 @@ img{
         /* height: 20%; */
         background-color: brown;
     }
-    
-    
-    
-    
-
-    
-
-    
 }
 /* #endregion */
 
@@ -71,7 +63,7 @@ body{
     display: flex;
     width: 80vw;
     margin: 5vh auto;
-    /* potrei togliere le misure a left e right dandogli solo height 100%?? */
+
 }
 /* left */
 

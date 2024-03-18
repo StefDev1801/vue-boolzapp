@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boolzapp</title>
+    <title>Vue Boolzapp</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://kit.fontawesome.com/44abc1504c.js" crossorigin="anonymous"></script>
 </head>
@@ -39,22 +39,26 @@
                     </div>
                 </div>
                 <div class="left_main">
+
+
                     <!-- overflow: scroll -->
                     <div class="search_chat">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <div class="chat_list">
-                        <div class="chat">
+
+
+                        <div class="chat" v-for="(contact,index) in contacts" @click="clickLeft(index)">
                             <div class="my-img">
-                                <img src="./assets/img/avatar_1.jpg" alt="">
+                                <img :src="contact.avatar" alt="">
                             </div>
                             <div class="icon_text">
 
                                 <div class="name_hour">
-                                    <h4>Michele</h4>
+                                    <h4>{{contact.name}}</h4>
                                     <div class="light_text">
-                                        16:15
+                                        {{contact.hour}}
                                     </div>
                                 </div>
 
@@ -62,7 +66,9 @@
                             </div>
 
                         </div>
-                        <div class="chat">
+
+
+                        <!-- <div class="chat">
                             <div class="my-img">
                                 <img src="./assets/img/avatar_2.jpg" alt="">
                             </div>
@@ -77,8 +83,8 @@
 
                                 <div class="light_text"><u>Lorem ipsum dolor sit.</u></div>
                             </div>
-
                         </div>
+
                         <div class="chat">
                             <div class="my-img">
                                 <img src="./assets/img/avatar_3.jpg" alt="">
@@ -96,6 +102,7 @@
                             </div>
 
                         </div>
+
                         <div class="chat">
                             <div class="my-img">
                                 <img src="./assets/img/avatar_4.jpg" alt="">
@@ -113,6 +120,7 @@
                             </div>
 
                         </div>
+
                         <div class="chat">
                             <div class="my-img">
                                 <img src="./assets/img/avatar_5.jpg" alt="">
@@ -130,6 +138,7 @@
                             </div>
 
                         </div>
+
                         <div class="chat">
                             <div class="my-img">
                                 <img src="./assets/img/avatar_6.jpg" alt="">
@@ -147,6 +156,7 @@
                             </div>
 
                         </div>
+
                         <div class="chat">
                             <div class="my-img">
                                 <img src="./assets/img/avatar_7.jpg" alt="">
@@ -164,6 +174,7 @@
                             </div>
 
                         </div>
+
                         <div class="chat">
                             <div class="my-img">
                                 <img src="./assets/img/avatar_8.jpg" alt="">
@@ -179,7 +190,8 @@
                                 <div class="light_text"><u>Lorem ipsum dolor sit.</u></div>
                             </div>
 
-                        </div>
+                        </div> -->
+
                     </div>
                 </div>
             </div>
@@ -189,7 +201,7 @@
                     <div class="current_chat">
                         <!-- same css as my profile? -->
                         <div class="my-img">
-                            <img src="./assets/img/avatar_1.jpg" alt="">
+                            <img :src="contacts[currentChat].avatar" alt="">
                         </div>
                         <div class="profile_current_chat">
                             <div>
@@ -207,13 +219,24 @@
                         </div>
                     </div>
                 </div>
+
+
+                <!-- start messages -->
                 <div class="right_main">
                     <div class="my-msg">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vero iusto quibusdam accusamus,
-                        earum
-                        labore doloremque. Ad voluptatum tempore consectetur aspernatur fugiat, at nam ratione atque
-                        eum!
-                        Officia, eaque quasi!
+                        <!-- qui devo inserire i messaggi che sono presenti dentro l'array
+                        contact -> messages -> message
+                        contacts[currrentChat].messages
+                        es contacts[0].messages = Hai portato a spasso il cane?
+                        -->
+                        <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vero iusto quibusdam
+                            accusamus,
+                            earum
+                            labore doloremque. Ad voluptatum tempore consectetur aspernatur fugiat, at nam ratione atque
+                            eum!
+                            Officia, eaque quasi!</div>
+
+
                         <div class="time">
                             16:13
                         </div>
