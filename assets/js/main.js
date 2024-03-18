@@ -211,7 +211,16 @@ createApp({
                 status: 'sent',
                 hour: ''//                                          fix hour
             });
+            setTimeout(this.keyupReplyFromInput, 1000)
         },
+        keyupReplyFromInput() {
+            this.contacts[this.currentChat].messages.push({
+                message: 'ok',
+                status: 'received',
+                hour: ''//                                          fix hour
+
+            })
+        }
     },
     mounted(){
         console.log('test'); 
