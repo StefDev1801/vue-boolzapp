@@ -44,12 +44,14 @@
                     <!-- overflow: scroll -->
                     <div class="search_chat">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="textSearch"
+                            @keyup="findFriendProfile()">
                     </div>
                     <div class="chat_list">
 
 
-                        <div class="chat" v-for="(contact,index) in contacts" @click="clickLeft(index)">
+                        <div class="chat" v-for="(contact,index) in contacts" @click="clickLeft(index)"
+                            :class="contact.visible === false ? 'disp_none' : ''">
                             <div class="my-img">
                                 <img :src="contact.avatar" alt="">
                             </div>

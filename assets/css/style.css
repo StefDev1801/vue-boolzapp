@@ -49,6 +49,10 @@ img{
         background-color: brown;
     }
 }
+/*Visiblity preview contacts*/
+.disp_none{
+    display: none!important
+}
 /* #endregion */
 
 /* #region webapp? */
